@@ -1,22 +1,73 @@
-.card {
-    padding: 15px;
-    margin-bottom: 15px;
-    border-bottom: 1px solid #ddd;
-}
-
-.card h4 {
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
     margin: 0;
-    color: #1a0dab;
+    padding: 0;
 }
 
-.card a {
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 30px;
+    background-color: #ffffff;
+}
+
+h1 {
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    color: #555;
+    margin-bottom: 25px;
+}
+
+form {
+    margin-bottom: 30px;
+}
+
+input[type="text"] {
+    width: 70%;
+    padding: 10px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px 16px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+h2 {
+    margin-top: 40px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #eee;
+}
+
+.results {
+    list-style: none;
+    padding: 0;
+}
+
+.results li {
+    background-color: #f4f6f8;
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 6px;
+}
+
+.results a {
+    font-size: 17px;
+    font-weight: bold;
+    color: #1a73e8;
     text-decoration: none;
 }
 
-.card p {
-    color: #4d5156;
+.results a:hover {
+    text-decoration: underline;
 }
 
-.card small {
-    color: gray;
+.results p {
+    margin-top: 8px;
+    color: #444;
+    font-size: 14px;
 }

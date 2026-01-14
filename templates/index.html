@@ -9,39 +9,58 @@
 
 <div class="container">
     <h1>BlogRanker</h1>
-    <p class="subtitle">AI-powered blog ranking with popularity</p>
+    <p class="subtitle">Read any topic </p>
 
     <form method="post">
-        <input type="text" name="query" placeholder="Search any topic..." required>
+        <input type="text" name="query" placeholder="What do you want to learn?" required>
         <button type="submit">Search</button>
     </form>
 
     {% if results %}
-        <div class="results">
-            <h3>Top Ranked Blogs</h3>
-            <ul>
-                {% for blog in results %}
-                    <li>
-                        <strong>
-                            {{ loop.index }}.
-                            <a href="{{ blog.link }}" target="_blank">
-                                {{ blog.title }}
-                            </a>
-                        </strong>
 
-                        <p>{{ blog.snippet }}</p>
+        {% if results.Beginner %}
+        <h2>🟢 Start with Basics</h2>
+        <ul class="results">
+            {% for blog in results.Beginner %}
+                <li>
+                    <a href="{{ blog.link }}" target="_blank">
+                        {{ blog.title }}
+                    </a>
+                    <p>{{ blog.snippet }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
 
-                        <small>
-                            🔍 Relevance: {{ blog.relevance }} |
-                            ⭐ Popularity: {{ blog.popularity }} |
-                            🧠 Final Score: {{ blog.final_score }}
-                        </small>
-                    </li>
-                {% endfor %}
-            </ul>
-        </div>
+        {% if results.Intermediate %}
+        <h2>🟡 Build Understanding</h2>
+        <ul class="results">
+            {% for blog in results.Intermediate %}
+                <li>
+                    <a href="{{ blog.link }}" target="_blank">
+                        {{ blog.title }}
+                    </a>
+                    <p>{{ blog.snippet }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+
+        {% if results.Advanced %}
+        <h2>🔴 Go Deeper</h2>
+        <ul class="results">
+            {% for blog in results.Advanced %}
+                <li>
+                    <a href="{{ blog.link }}" target="_blank">
+                        {{ blog.title }}
+                    </a>
+                    <p>{{ blog.snippet }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+
     {% endif %}
 </div>
-
 </body>
 </html>
